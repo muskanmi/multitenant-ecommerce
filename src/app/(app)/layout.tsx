@@ -4,7 +4,7 @@ import "./globals.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-});
+}); 
 
 export const metadata: Metadata = {
   title: "Create Next App",
