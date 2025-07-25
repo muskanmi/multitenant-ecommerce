@@ -12,5 +12,5 @@ export const CategoryDropdown = ({
   isActive,
   isNavigationHovered,
 }: Props) => {
-  return <Button>{category.name}</Button>;
+  return <Button variant="elevated">{category.name}</Button>;
 };
