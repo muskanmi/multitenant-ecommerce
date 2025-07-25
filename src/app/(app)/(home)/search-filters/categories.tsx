@@ -8,15 +8,15 @@ interface CategoriesProps {
 export const Categories = ({ data }: CategoriesProps) => {
   return (
     <div>
-      {data.map((category: Category) => {
+      {data.map((category: Category) => (
         <div key={category.id}>
           <CategoryDropdown
             category={category}
             isActive={false}
             isNavigationHovered={false}
           />
-        </div>;
-      })}
+        </div>
+      ))}
     </div>
   );
 };
