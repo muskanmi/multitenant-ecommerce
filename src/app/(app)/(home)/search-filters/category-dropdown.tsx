@@ -1,6 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Category } from "@/payload-types";
+import { useState } from "react";
 
 interface Props {
   category: Category;
@@ -13,6 +16,7 @@ export const CategoryDropdown = ({
   isActive,
   isNavigationHovered,
 }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Button
       variant="elevated"
