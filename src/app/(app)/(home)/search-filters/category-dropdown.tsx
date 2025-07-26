@@ -18,6 +18,14 @@ export const CategoryDropdown = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const onMouseEnter = () => {
+    if (category.subcategories) {
+      setIsOpen(true);
+    }
+  };
+
+  const onMouseLeave = () => setIsOpen(false);
   return (
     <Button
       variant="elevated"
