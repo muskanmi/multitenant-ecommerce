@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Category } from "@/payload-types";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 interface Props {
   category: Category;
@@ -17,6 +17,7 @@ export const CategoryDropdown = ({
   isNavigationHovered,
 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   return (
     <Button
       variant="elevated"
