@@ -18,4 +18,19 @@ export const SubCategoryMenu = ({
   ) {
     return null;
   }
+
+  const backgroundColor = category.color || "#F5F5F5";
+
+  return (
+    <div
+      className="fixed z-100"
+      style={{
+        top: position.top,
+        left: position.left,
+      }}
+    >
+      {/* Invisible bridge to maintain hover */}
+      <div className="h-3 w-60" />
+    </div>
+  );
 };
