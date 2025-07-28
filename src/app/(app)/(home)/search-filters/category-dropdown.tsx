@@ -28,6 +28,8 @@ export const CategoryDropdown = ({
   };
 
   const onMouseLeave = () => setIsOpen(false);
+
+  const dropdownPosition = getDropdownPosition();
   return (
     <div
       className="relative"
@@ -54,6 +56,12 @@ export const CategoryDropdown = ({
           />
         )}
       </div>
+
+      <SubCategoryMenu
+        category={category}
+        isOpen={isOpen}
+        position={dropdownPosition}
+      />
     </div>
   );
 };
