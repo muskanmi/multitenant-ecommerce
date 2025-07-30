@@ -31,6 +31,9 @@ export const SubCategoryMenu = ({
     >
       {/* Invisible bridge to maintain hover */}
       <div className="h-3 w-60" />
+      <div className="w-60 text-black rounded-md overflow-hidden border">
+        <p>Subcategory menu</p>
+      </div>
     </div>
   );
 };
