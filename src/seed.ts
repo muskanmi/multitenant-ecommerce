@@ -150,5 +150,20 @@ const seed = async () => {
         parent: null,
       },
     });
+
+    for (const subCategory of category.subcategories || []) {
+      await payload.create({
+        collection: "categories",
+        data: {
+          name: subCategory.name,
+          slug: subCategory.slug,
+          parent: parentCategory.id,
+        },
+      });
+    }
   }
 };
+
+await seed();
+
+process.exit(0);
