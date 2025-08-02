@@ -164,6 +164,11 @@ const seed = async () => {
   }
 };
 
-await seed();
-
-process.exit(0);
+try {
+  await seed();
+  console.log("Seeding completed successfully");
+  process.exit(0);
+} catch (error) {
+  console.error("Error during seeding:", error);
+  process.exit(1);
+}
