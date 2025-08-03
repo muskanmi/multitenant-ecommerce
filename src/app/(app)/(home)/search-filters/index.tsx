@@ -3,7 +3,7 @@ import { Categories } from "./categories";
 import { SearchInput } from "./search-input";
 
 interface Props {
-  data: CustomCategory;
+  data: CustomCategory[];
 }
 
 export const SearchFilters = ({ data }: Props) => {
