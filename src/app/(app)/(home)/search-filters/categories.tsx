@@ -28,7 +28,7 @@ export const Categories = ({ data }: CategoriesProps) => {
           <div key={category.id}>
             <CategoryDropdown
               category={category}
-              isActive={false}
+              isActive={activeCategory === category.slug}
               isNavigationHovered={false}
             />
           </div>
