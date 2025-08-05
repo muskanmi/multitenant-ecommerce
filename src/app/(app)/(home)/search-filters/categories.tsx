@@ -26,7 +26,30 @@ export const Categories = ({ data }: CategoriesProps) => {
   const isActiveCategoryHidden =
     activeCategoryIndex >= visibleCount && activeCategoryIndex !== -1;
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const calculateVisible = () => {
+      if (!containerRef.current || !measureRef.current || !viewAllRef.current)
+        return;
+
+      const containerWidth = containerRef.current.offsetWidth;
+      const viewAllWidth = viewAllRef.current.offsetWidth;
+      const availableWidth = containerWidth - viewAllWidth;
+
+      const items = Array.from(measureRef.current.children);
+      let totalWidth = 0;
+      let visible = 0;
+
+      for (const item of items) {
+        const width = item.getBoundingClientRect().width;
+
+        if (totalWidth + width > availableWidth) break;
+        totalWidth += width;
+        visible++;
+      }
+
+      setVisibleCount(visible);
+    };
+  }, []);
 
   return (
     <div className="relative w-full">
