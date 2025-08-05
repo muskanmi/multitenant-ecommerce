@@ -1,6 +1,8 @@
+"use client";
+
 import { CategoryDropdown } from "./category-dropdown";
 import { CustomCategory } from "../types";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface CategoriesProps {
   data: CustomCategory[];
@@ -14,6 +16,10 @@ export const Categories = ({ data }: CategoriesProps) => {
   const [visibleContent, setVisibleContent] = useState(data.length);
   const [isAnyHovered, setIsAnyHovered] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const activeCategory = "all";
+
+  useEffect(() => {}, []);
 
   return (
     <div className="relative w-full">
