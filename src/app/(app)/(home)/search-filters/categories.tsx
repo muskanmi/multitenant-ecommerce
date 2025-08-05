@@ -13,11 +13,18 @@ export const Categories = ({ data }: CategoriesProps) => {
   const measureRef = useRef<HTMLDivElement>(null);
   const viewAllRef = useRef<HTMLDivElement>(null);
 
-  const [visibleContent, setVisibleContent] = useState(data.length);
+  const [visibleCount, setVisibleCount] = useState(data.length);
   const [isAnyHovered, setIsAnyHovered] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const activeCategory = "all";
+
+  const activeCategoryIndex = data.findIndex(
+    (cat) => cat.slug === activeCategory
+  );
+
+  const isActiveCategoryHidden =
+    activeCategoryIndex >= visibleCount && activeCategoryIndex !== -1;
 
   useEffect(() => {}, []);
 
