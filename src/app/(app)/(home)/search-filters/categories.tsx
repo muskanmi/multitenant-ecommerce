@@ -51,7 +51,7 @@ export const Categories = ({ data }: CategoriesProps) => {
     };
 
     const resizeObserver = new ResizeObserver(calculateVisible);
-    resizeObserver.observe(containerRef.current);
+    resizeObserver.observe(containerRef.current!);
   }, []);
 
   return (
