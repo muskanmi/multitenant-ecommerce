@@ -49,6 +49,9 @@ export const Categories = ({ data }: CategoriesProps) => {
 
       setVisibleCount(visible);
     };
+
+    const resizeObserver = new ResizeObserver(calculateVisible);
+    resizeObserver.observe(containerRef.current);
   }, []);
 
   return (
