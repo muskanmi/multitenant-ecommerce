@@ -58,6 +58,24 @@ export const Categories = ({ data }: CategoriesProps) => {
 
   return (
     <div className="relative w-full">
+      {/* Hidden div to measure all items */}
+      <div
+        ref={measureRef}
+        className="absolute opacity-0 pointer-events-none flex"
+        style={{ position: "fixed", top: -9999, left: -9999 }}
+      >
+        {data.map((category) => (
+          <div key={category.id}>
+            <CategoryDropdown
+              category={category}
+              isActive={activeCategory === category.slug}
+              isNavigationHovered={false}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Visible items */}
       <div className="flex flex-nowrap items-center">
         {data.map((category) => (
           <div key={category.id}>
