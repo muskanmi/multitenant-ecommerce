@@ -52,7 +52,9 @@ export const Categories = ({ data }: CategoriesProps) => {
 
     const resizeObserver = new ResizeObserver(calculateVisible);
     resizeObserver.observe(containerRef.current!);
-  }, []);
+
+    return () => resizeObserver.disconnect();
+  }, [data.length]);
 
   return (
     <div className="relative w-full">
