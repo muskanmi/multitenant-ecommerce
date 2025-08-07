@@ -103,6 +103,7 @@ export const Categories = ({ data }: CategoriesProps) => {
                 !isAnyHovered &&
                 "bg-white border-primary"
             )}
+            onClick={() => setIsSidebarOpen(true)}
           >
             View All
             <ListFilterIcon className="ml-2" />
