@@ -3,6 +3,8 @@
 import { CategoryDropdown } from "./category-dropdown";
 import { CustomCategory } from "../types";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface CategoriesProps {
   data: CustomCategory[];
@@ -91,6 +93,17 @@ export const Categories = ({ data }: CategoriesProps) => {
             />
           </div>
         ))}
+
+        <div ref={viewAllRef} className="shrink-0">
+          <Button
+            className={cn(
+              "h-11 px-4 bg-transparent border-transparent rounded-full hover:bg-white hover:border-primary text-black",
+              isActiveCategoryHidden &&
+                !isAnyHovered &&
+                "bg-white border-primary"
+            )}
+          ></Button>
+        </div>
       </div>
     </div>
   );
