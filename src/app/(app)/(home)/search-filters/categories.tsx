@@ -5,6 +5,7 @@ import { CustomCategory } from "../types";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ListFilterIcon } from "lucide-react";
 
 interface CategoriesProps {
   data: CustomCategory[];
@@ -102,7 +103,10 @@ export const Categories = ({ data }: CategoriesProps) => {
                 !isAnyHovered &&
                 "bg-white border-primary"
             )}
-          ></Button>
+          >
+            View All
+            <ListFilterIcon className="ml-2" />
+          </Button>
         </div>
       </div>
     </div>
