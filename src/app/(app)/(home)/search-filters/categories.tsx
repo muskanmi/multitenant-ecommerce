@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ListFilterIcon } from "lucide-react";
+import CategoriesSidebar from "./categories-sidebar";
 
 interface CategoriesProps {
   data: CustomCategory[];
